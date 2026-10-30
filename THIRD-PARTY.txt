@@ -1,0 +1,33 @@
+THIRD-PARTY NOTICES
+===================
+
+This plugin uses the following third-party software and fonts.
+
+
+Press Start 2P (pixel font used in the plugin interface)
+--------------------------------------------------------
+Copyright 2012 The Press Start 2P Project Authors (cody@zone38.net),
+with Reserved Font Name "Press Start 2P".
+Licensed under the SIL Open Font License, Version 1.1.
+Full license text: licenses/PressStart2P-OFL.txt
+https://fonts.google.com/specimen/Press+Start+2P
+
+
+JUCE framework
+--------------
+Built with the JUCE framework, https://juce.com
+Used under the JUCE End User Licence Agreement (free Starter licence).
+
+
+VST3 SDK
+--------
+Copyright (c) Steinberg Media Technologies GmbH.
+Licensed under the MIT License.
+Full license text: licenses/VST3-SDK-LICENSE.txt
+VST is a trademark of Steinberg Media Technologies GmbH.
+
+
+Build tool
+----------
+JuMake by BaraMGB, https://github.com/BaraMGB/JuMake
+(used to build the plugin; not part of the plugin itself)

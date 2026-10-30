@@ -1,0 +1,46 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Frameworks (do not redistribute): keep JUCE next to this project, not inside it
+JUCE/
+JUCE */
+modules/
+
+# Build output
+build/
+cmake-build-*/
+Builds/
+Debug/
+Release/
+bin/
+out/
+*.o
+*.obj
+*.a
+*.lib
+*.dylib
+*.so
+*.dll
+*.exe
+
+# Plugin / app bundles and release zips
+*.vst3
+*.component
+*.app
+*.zip
+*.dmg
+
+# Xcode / Visual Studio / editors
+xcuserdata/
+*.xcuserstate
+DerivedData/
+.vs/
+*.user
+.vscode/
+.idea/
+
+# Logs and temp files
+*.log
+*.tmp

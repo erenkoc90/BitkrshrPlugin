@@ -7,7 +7,7 @@ I built the pedal first (Arduino Nano-compatible board, C++) and then ported the
 > **Warning:** bit crushing can get loud. Turn your volume down before you start.
 
 ![Screenshot of the plugin](docs/screenshot.png)
-<!-- ► Add a screenshot of the plugin in Ableton Live as docs/screenshot.png, or remove this line. -->
+
 
 ## Status
 

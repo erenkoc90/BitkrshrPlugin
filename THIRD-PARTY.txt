@@ -25,9 +25,3 @@ Copyright (c) Steinberg Media Technologies GmbH.
 Licensed under the MIT License.
 Full license text: licenses/VST3-SDK-LICENSE.txt
 VST is a trademark of Steinberg Media Technologies GmbH.
-
-
-Build tool
-----------
-JuMake by BaraMGB, https://github.com/BaraMGB/JuMake
-(used to build the plugin; not part of the plugin itself)

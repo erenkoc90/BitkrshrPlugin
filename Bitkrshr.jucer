@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="i0CDPZ" name="Bitkrshr" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
-  <MAINGROUP id="yOhaHt" name="Bitkrshr">
+<JUCERPROJECT id="i0CDPZ" name="Bit.krshr" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" companyName="7KY"
+              pluginFormats="buildAU,buildVST3" pluginCode="bkrs" companyWebsite="erenkoc90.github.io"
+              companyEmail="eren.dev.koc@gmail.com" pluginManufacturer="7KY"
+              bundleIdentifier="com.7ky.bitkrshr" aaxIdentifier="com.7ky.bitkrshr"
+              pluginManufacturerCode="7KYx">
+  <MAINGROUP id="yOhaHt" name="Bit.krshr">
     <GROUP id="{08468C6A-3C6C-58B2-5C9A-72EF62BE9DD9}" name="Source">
       <FILE id="PFTS9l" name="PressStart2P.ttf" compile="0" resource="1"
             file="PressStart2P.ttf" xcodeResource="1"/>
@@ -37,7 +41,8 @@
     <XCODE_MAC targetFolder="Builds/MacOSX">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" targetName="Bitkrshr"/>
-        <CONFIGURATION isDebug="0" name="Release" targetName="Bitkrshr"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="Bitkrshr" osxArchitecture="64BitIntel"
+                       customXcodeFlags="ARCHS=&quot;arm64 x86_64&quot;, ONLY_ACTIVE_ARCH=NO"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_audio_basics" path="../../../../JUCE/modules"/>

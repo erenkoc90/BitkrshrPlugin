@@ -29,11 +29,11 @@ BitkrshrAudioProcessor::createParameterLayout()
 {
     juce::AudioProcessorValueTreeState::ParameterLayout layout;
 
-    // 1 ... 16 bit, varsayılan 16 (neredeyse temiz). Arduino'da 8 ... 1 idi.
+    // 1 ... 16 bit depth, default is 16 . in Arduino it was 8 ... 1.
     layout.add (std::make_unique<juce::AudioParameterInt> (
         juce::ParameterID { "bits", 1 }, "Bit Depth", 1, 16, 16));
 
-    // Her kaç sample'da bir yeni sample alınacak: 1 ... 32
+    // how often will i get a new sample: 1 ... 32
     layout.add (std::make_unique<juce::AudioParameterInt> (
         juce::ParameterID { "hold", 1 }, "Sample Hold", 1, 32, 1));
 
@@ -106,7 +106,7 @@ void BitkrshrAudioProcessor::changeProgramName (int index, const juce::String& n
 //==============================================================================
 void BitkrshrAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    juce::ignoreUnused (sampleRate, samplesPerBlock);  // şimdilik kullanmıyoruz
+    juce::ignoreUnused (sampleRate, samplesPerBlock);
     held.fill (0.0f);
     holdCount = 0;
 }
@@ -134,37 +134,37 @@ bool BitkrshrAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts)
 void BitkrshrAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer,
                                            juce::MidiBuffer&)
 {
-    juce::ScopedNoDenormals noDenormals;   // CPU'yu yavaşlatan çok küçük sayıları sıfırlar
+    juce::ScopedNoDenormals noDenormals;   // super small numbers turn into 0, bc they can slow the CPU
 
     const int numChannels = buffer.getNumChannels();
     const int numSamples  = buffer.getNumSamples();
 
-    // "Potları oku" = Arduino'daki analogRead(A1) ve analogRead(A2)
+    // "read trimpots" = just like analogRead(A1) and analogRead(A2) in Arduino
     const int   bits   = (int) bitsParam->load();
     const int   holdN  = (int) holdParam->load();
-    const float levels = std::pow (2.0f, (float) (bits - 1));  // her yarım dalgadaki basamak sayısı
+    const float levels = std::pow (2.0f, (float) (bits - 1));
 
     float* const* data = buffer.getArrayOfWritePointers();
 
-    for (int i = 0; i < numSamples; ++i)       // Arduino'da bu bir loop() turuydu
+    for (int i = 0; i < numSamples; ++i)       // it s like loop() on Arduino
     {
-        if (holdCount == 0)                    // yeni sample al (sample rate azaltma)
+        if (holdCount == 0)                    // take a new sample (~sample rate reduction)
         {
             for (int ch = 0; ch < numChannels; ++ch)
             {
-                // constrain(s, -128, 127) karşılığı:
+                // analog to constrain(s, -128, 127) in Arduino!
                 const float x = juce::jlimit (-1.0f, 1.0f, data[ch][i]);
 
-                // bit derinliği azaltma: en yakın basamağa yuvarla
+                // bit depth reduction (round it)
                 held[(size_t) ch] = std::round (x * levels) / levels;
             }
         }
 
-        // OCR2B = held karşılığı: tutulan değeri çıkışa yaz
+        // analog to OCR2B = held on Arduino: write the held value to the exit
         for (int ch = 0; ch < numChannels; ++ch)
             data[ch][i] = held[(size_t) ch];
 
-        if (++holdCount >= holdN)              // aynı satır, Arduino kodundaki gibi
+        if (++holdCount >= holdN)              
             holdCount = 0;
     }
 }

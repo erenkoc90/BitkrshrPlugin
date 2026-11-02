@@ -26,7 +26,7 @@
  #define JucePlugin_Build_AAX              0
 #endif
 #ifndef  JucePlugin_Build_Standalone
- #define JucePlugin_Build_Standalone       1
+ #define JucePlugin_Build_Standalone       0
 #endif
 #ifndef  JucePlugin_Build_Unity
  #define JucePlugin_Build_Unity            0
@@ -41,25 +41,25 @@
  #define JucePlugin_Enable_ARA             0
 #endif
 #ifndef  JucePlugin_Name
- #define JucePlugin_Name                   "Bitkrshr"
+ #define JucePlugin_Name                   "Bit.krshr"
 #endif
 #ifndef  JucePlugin_Desc
- #define JucePlugin_Desc                   "Bitkrshr"
+ #define JucePlugin_Desc                   "Bit.krshr"
 #endif
 #ifndef  JucePlugin_Manufacturer
- #define JucePlugin_Manufacturer           "yourcompany"
+ #define JucePlugin_Manufacturer           "7KY"
 #endif
 #ifndef  JucePlugin_ManufacturerWebsite
- #define JucePlugin_ManufacturerWebsite    "www.yourcompany.com"
+ #define JucePlugin_ManufacturerWebsite    "erenkoc90.github.io"
 #endif
 #ifndef  JucePlugin_ManufacturerEmail
- #define JucePlugin_ManufacturerEmail      ""
+ #define JucePlugin_ManufacturerEmail      "eren.dev.koc@gmail.com"
 #endif
 #ifndef  JucePlugin_ManufacturerCode
- #define JucePlugin_ManufacturerCode       0x4d616e75
+ #define JucePlugin_ManufacturerCode       0x374b5978
 #endif
 #ifndef  JucePlugin_PluginCode
- #define JucePlugin_PluginCode             0x49306364
+ #define JucePlugin_PluginCode             0x626b7273
 #endif
 #ifndef  JucePlugin_IsSynth
  #define JucePlugin_IsSynth                0
@@ -104,19 +104,19 @@
  #define JucePlugin_AUSubType              JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_AUExportPrefix
- #define JucePlugin_AUExportPrefix         BitkrshrAU
+ #define JucePlugin_AUExportPrefix         Bit_krshrAU
 #endif
 #ifndef  JucePlugin_AUExportPrefixQuoted
- #define JucePlugin_AUExportPrefixQuoted   "BitkrshrAU"
+ #define JucePlugin_AUExportPrefixQuoted   "Bit_krshrAU"
 #endif
 #ifndef  JucePlugin_AUManufacturerCode
  #define JucePlugin_AUManufacturerCode     JucePlugin_ManufacturerCode
 #endif
 #ifndef  JucePlugin_CFBundleIdentifier
- #define JucePlugin_CFBundleIdentifier     com.yourcompany.Bitkrshr
+ #define JucePlugin_CFBundleIdentifier     com.7ky.bitkrshr
 #endif
 #ifndef  JucePlugin_AAXIdentifier
- #define JucePlugin_AAXIdentifier          com.yourcompany.Bitkrshr
+ #define JucePlugin_AAXIdentifier          com.7ky.bitkrshr
 #endif
 #ifndef  JucePlugin_AAXManufacturerCode
  #define JucePlugin_AAXManufacturerCode    JucePlugin_ManufacturerCode
@@ -140,7 +140,7 @@
  #define JucePlugin_IAASubType             JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_IAAName
- #define JucePlugin_IAAName                "yourcompany: Bitkrshr"
+ #define JucePlugin_IAAName                "7KY: Bit.krshr"
 #endif
 #ifndef  JucePlugin_VSTNumMidiInputs
  #define JucePlugin_VSTNumMidiInputs       16
@@ -155,10 +155,10 @@
  #define JucePlugin_ARATransformationFlags  0
 #endif
 #ifndef  JucePlugin_ARAFactoryID
- #define JucePlugin_ARAFactoryID           "com.yourcompany.Bitkrshr.factory"
+ #define JucePlugin_ARAFactoryID           "com._7KY.Bit_krshr.factory"
 #endif
 #ifndef  JucePlugin_ARADocumentArchiveID
- #define JucePlugin_ARADocumentArchiveID   "com.yourcompany.Bitkrshr.aradocumentarchive.1.0.0"
+ #define JucePlugin_ARADocumentArchiveID   "com._7KY.Bit_krshr.aradocumentarchive.1.0.0"
 #endif
 #ifndef  JucePlugin_ARACompatibleArchiveIDs
  #define JucePlugin_ARACompatibleArchiveIDs  ""

@@ -44,19 +44,19 @@ public:
     void setStateInformation (const void* data, int sizeInBytes) override;
 
     //==============================================================================
-    // Parametreler: Arduino'daki iki trimpot
+    // parameters, just like the trimpots on Arduino
     juce::AudioProcessorValueTreeState apvts;
 
 private:
     //==============================================================================
     static juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
 
-    // Parametrelere audio thread'den güvenle erişmek için işaretçiler
+    // pointers to reach the parameters safely from audio thread
     std::atomic<float>* bitsParam = nullptr;
     std::atomic<float>* holdParam = nullptr;
 
-    // Arduino'daki global değişkenlerimiz: held ve holdCount
-    std::array<float, 2> held { 0.0f, 0.0f };   // her kanal için, en fazla stereo
+    // global variables: held and holdCount
+    std::array<float, 2> held { 0.0f, 0.0f };   // for each channel, at most: stereo
     int holdCount = 0;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BitkrshrAudioProcessor)

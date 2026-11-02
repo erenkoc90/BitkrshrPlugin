@@ -6,7 +6,7 @@ namespace
     //==== colors ====//
     const juce::Colour bgColour     { 0xff3dcc21};   // green
     const juce::Colour accentColour { 0xff5a21cc };   // purple
-    const juce::Colour textColour   { 0xffeaeaea };   // açık gri
+    const juce::Colour textColour   { 0xffeaeaea };   // light gray
 }
 
 BitkrshrAudioProcessorEditor::BitkrshrAudioProcessorEditor (BitkrshrAudioProcessor& p)

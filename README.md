@@ -4,6 +4,8 @@ A small bitcrusher effect plugin (C++, [JUCE](https://juce.com)), based on my DI
 
 I built the pedal first (Arduino Nano-compatible board, C++) and then ported the idea to a plugin. It was my first project with JUCE. I'm a beginner in audio programming, so the code is simple on purpose, and I'm happy about feedback.
 
+![Screenshot of the Bit.krshr plugin in Ableton Live](docs/screenshot1.png)
+
 > **Warning:** bit crushing can get loud. Turn your volume down before you start.
 
 ## Status
